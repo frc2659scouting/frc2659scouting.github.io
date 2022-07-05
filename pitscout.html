@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2659 Pit Scouting</title>
-    <link rel="stylesheet" type="text/css" href="pitstyle.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     
     <form>
         <div>
+            <img src="2659.png" height="200" class="logo">
             <h3>Team Number :</h3>
             <input type="text" id="tnum" placeholder="2659" maxlength="4" required>
 
             <br>
 
-            <h3>Team Name (optional) :</h3>
-            <input type="text" id="tname" placeholder="Robowarriors">
+            <h3>Team Name :</h3>
+            <input type="text" id="tname" placeholder="Robowarriors" required>
         </div>
 
         <div>
@@ -171,7 +172,7 @@
     <div>
         <br>
         <br>
-        <button href="upload.js" onclick="uploadInfo()" name="Add Team" style="color: goldenrod; background-color: black; font-size: xx-large;" type="button">
+        <button onclick="uploadInfo()" name="Add Team" style="color: goldenrod; background-color: black; font-size: xx-large;" type="button">
             Add Team
         </button>
         <button name="Return to home" style="color: goldenrod; background-color: black; font-size: xx-large;" type="button" value="addTeam">
@@ -189,6 +190,13 @@
                 }
             });
         }
+    </script>
+
+    <script>
+        function uploadInfo() {
+            console.log(("tname").val())
+        }
+        //tnum: $("tnum").val()
     </script>
 </body>
 </html>
