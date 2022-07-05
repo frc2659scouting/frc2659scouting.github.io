@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2659 Pit Scouting</title>
+    <link rel="stylesheet" type="text/css" href="pitstyle.css">
+</head>
+<body>
+    
+    <form>
+        <div>
+            <h3>Team Number :</h3>
+            <input type="text" id="tnum" placeholder="2659" maxlength="4" required>
+
+            <br>
+
+            <h3>Team Name (optional) :</h3>
+            <input type="text" id="tname" placeholder="Robowarriors">
+        </div>
+
+        <div>
+            <h3>Drivetrain :</h3>
+
+            <input type="radio" value="swerve" id="swerve" name="dt">
+            <label for="swerve">Swerve</label>
+
+            <br>
+            
+            <input type="radio" value="6wwestcoast" id="6wwestcoast" name="dt">
+            <label for="6wwestcoast">6 wheel West-Coast</label>
+
+            <br>
+            
+            <input style="box-sizing: border-box;" type="radio" value="8wwestcoast" id="8wwestcoast" name="dt">
+            <label for="8wwestcoast">8 wheel Tank</label>
+        </div>  
+
+        <div>
+            <h3>Shooting Level :</h3>
+
+            <input type="radio" id="uhub" value="uhub"name="shoot">
+            <label for="uhub">Upper Hub</label>
+
+            <br>
+            
+            <input type="radio" id="lhub" value="lhub" name="shoot">
+            <label for="lhub">Lower Hub</label>
+
+            <br>
+            
+            <input type="radio" id="both" value="both" name="shoot">
+            <label for="both">Both</label>
+
+            <br>
+            
+            <input type="radio" id="ns" value="ns" name="shoot">
+            <label for="ns">No Shooter</label>          
+        </div>
+
+        <div>
+            <h3>Shooting Location (select all that apply) :</h3>
+
+            <input type="radio" id="nos" value="nos" name="no shoot">
+            <label for="nos">No Shooter</label> 
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('no shoot')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="ahub" value="ahub" name="against hub">
+            <label for="ahub">Against Hub</label> 
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('against hub')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="lpad" value="lpad" name="lpad">
+            <label for="lpad">Launch Pad</label> 
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('lpad')">Clear</button>
+        </div>
+
+        <div>
+            <h3>Autos (select all that apply) :</h3>
+
+            <input type="radio" id="taxi" value="taxi" name="taxi">
+            <label for="taxi">Just Taxi</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('taxi')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="1 ball" value="1 ball" name="1 ball">
+            <label for="1 ball">1 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('1 ball')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="2 ball" value="2 ball" name="2 ball">
+            <label for="2 ball">2 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('2 ball')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="3 ball" value="3 ball" name="3 ball">
+            <label for="3 ball">3 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('3 ball')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="4 ball" value="4 ball" name="4 ball">
+            <label for="4 ball">4 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('4 ball')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="5 ball" value="5 ball" name="5 ball">
+            <label for="5 ball">5 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('5 ball')">Clear</button>
+
+            <br>
+
+            <input type="radio" id="6 ball" value="6 ball" name="6 ball">
+            <label for="6 ball">6 Ball</label>
+            <button style="background-color: black; color: goldenrod;" onclick="clearSection('6 ball')">Clear</button>
+
+        </div>
+
+        <div>
+            <h3>Climb Level :</h3>
+
+            <input type="radio" id="traversal" value="high" name="climb">
+            <label for="traversal">Traversal Rung</label>
+
+            <br>
+
+            <input type="radio" id="high" value="high" name="climb">
+            <label for="high">High Rung</label>
+
+            <br>
+
+            <input type="radio" id="mid" value="mid" name="climb">
+            <label for="mid">Middle Rung</label>
+
+            <br>
+
+            <input type="radio" id="low" value="low" name="climb">
+            <label for="low">Low Rung</label>
+
+            <br>
+
+            <input type="radio" id="nc" value="nc" name="climb">
+            <label for="nc">No Climb</label>
+        </div>
+        <div>
+            <h3>Programming Language :</h3>
+
+            <input type="radio" id="java" value="java" name="lang">
+            <label for="java">Java (best lang ever)</label>
+
+            <br>
+
+            <input type="radio" id="c++" value="c++" name="lang">
+            <label for="c++">C++</label>
+
+            <br>
+
+            <input type="radio" id="py" value="py" name="lang">
+            <label for="py">Python (bad)</label>
+        </div>
+    </form>
+
+    <div>
+        <br>
+        <br>
+        <button href="upload.js" onclick="uploadInfo()" name="Add Team" style="color: goldenrod; background-color: black; font-size: xx-large;" type="button">
+            Add Team
+        </button>
+        <button name="Return to home" style="color: goldenrod; background-color: black; font-size: xx-large;" type="button" value="addTeam">
+            <a style="color: goldenrod;" href="index.html">Go Home🙃</a>
+        </button>
+    </div>
+
+    <script>
+        function clearSection(name) {
+            const radios = document.querySelectorAll("input[type='radio'][name='"+name+"']");
+
+            radios.forEach((radio) => {
+                if (radio.checked === true) {
+                    radio.checked = false;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
